@@ -14,8 +14,15 @@ export interface TaskCard {
     title: string;
     description?: string;
     status: 'todo' | 'in-progress' | 'done';
+    priority: 'low' | 'medium' | 'high' | 'urgent';
+    tags: string[];
+    assigneeName?: string;
+    assigneeAvatarUrl?: string;
     assigneeId?: string;
     dueDate?: string;
+    timerSeconds: number;
+    timerRunning: boolean;
+    startedAt?: string | null;
     createdAt: string;
     updatedAt: string;
 }

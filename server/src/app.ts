@@ -6,6 +6,8 @@ import passport from 'passport';
 import { authRouter } from './auth/routes.js';
 import { configurePassport } from './auth/passport.js';
 import { env } from './config/env.js';
+import { apiRouter } from './api.js';
+import { dashboardRouter } from './dashboard.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 export const app = express();
@@ -37,6 +39,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authRouter);
+app.use('/api', apiRouter);
+app.use('/api/dashboard', dashboardRouter);
 
 app.get('/health', (_request, response) => {
     response.json({ ok: true });

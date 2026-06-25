@@ -11,6 +11,7 @@ const passport_1 = __importDefault(require("passport"));
 const routes_js_1 = require("./auth/routes.js");
 const passport_js_1 = require("./auth/passport.js");
 const env_js_1 = require("./config/env.js");
+const api_js_1 = require("./api.js");
 const errorHandler_js_1 = require("./middleware/errorHandler.js");
 exports.app = (0, express_1.default)();
 (0, passport_js_1.configurePassport)();
@@ -33,6 +34,7 @@ exports.app.use((0, express_session_1.default)({
 exports.app.use(passport_1.default.initialize());
 exports.app.use(passport_1.default.session());
 exports.app.use('/auth', routes_js_1.authRouter);
+exports.app.use('/api', api_js_1.apiRouter);
 exports.app.get('/health', (_request, response) => {
     response.json({ ok: true });
 });

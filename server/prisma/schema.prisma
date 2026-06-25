@@ -92,6 +92,7 @@ model Task {
   dueDate       DateTime?
   timerSeconds  Int           @default(0)
   timerRunning  Boolean       @default(false)
+  startedAt     DateTime?
   position      Int
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
