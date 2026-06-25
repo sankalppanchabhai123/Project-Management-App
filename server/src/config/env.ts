@@ -9,6 +9,7 @@ const envSchema = z.object({
     SERVER_URL: z.string().url().optional(),
     DATABASE_URL: z.string().min(1),
     JWT_SECRET: z.string().min(1),
+    JWT_REFRESH_SECRET: z.string().min(1).optional(),
     SESSION_SECRET: z.string().min(1),
     GOOGLE_CLIENT_ID: z.string().optional(),
     GOOGLE_CLIENT_SECRET: z.string().optional(),

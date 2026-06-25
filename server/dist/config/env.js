@@ -13,6 +13,7 @@ const envSchema = zod_1.z.object({
     SERVER_URL: zod_1.z.string().url().optional(),
     DATABASE_URL: zod_1.z.string().min(1),
     JWT_SECRET: zod_1.z.string().min(1),
+    JWT_REFRESH_SECRET: zod_1.z.string().min(1).optional(),
     SESSION_SECRET: zod_1.z.string().min(1),
     GOOGLE_CLIENT_ID: zod_1.z.string().optional(),
     GOOGLE_CLIENT_SECRET: zod_1.z.string().optional(),
